@@ -40,7 +40,7 @@ def test_pipeline_wires_classifier_retriever_and_llm():
     expected = ClassificationResult(
         intent="fare_price_dispute",
         confidence=0.94,
-        rationale="Customer disputes the fare charged for a trip.",
+        reason="Customer disputes the fare charged for a trip.",
     )
 
     def fake_classifier(customer_text, llm_client):
