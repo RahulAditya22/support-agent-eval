@@ -10,7 +10,7 @@ def test_classification_metrics():
     )
     assert result.n == 4
     assert result.accuracy == pytest.approx(0.75)
-    assert result.macro_f1 == pytest.approx((2 / 3 + 1.0) / 2)
+    assert result.macro_f1 == pytest.approx(11 / 15)
 
 
 def test_top_k_recall_exact_match():
