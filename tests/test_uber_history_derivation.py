@@ -44,11 +44,29 @@ def test_marks_terminal_uber_agent_reply_as_resolved():
     assert result[0].thread_id == "1"
 
 
+def test_csv_style_boolean_values_are_supported():
+    records = [
+        row("1", "101", "True", "", "2", "@Uber_Support I need help"),
+        row("2", "Uber_Support", "False", "1", "", "We can help with that."),
+    ]
+
+    assert derive_uber_history(records)[0].tweet_id == "2"
+
+
 def test_customer_terminal_message_keeps_thread_unresolved():
     records = [
         row("1", "101", True, "", "2", "@Uber_Support I need help"),
         row("2", "Uber_Support", False, "1", "3", "We can help with that."),
         row("3", "101", True, "2", "", "Thanks, but the issue remains."),
+    ]
+
+    assert derive_uber_history(records) == ()
+
+
+def test_missing_child_context_keeps_thread_unresolved():
+    records = [
+        row("1", "101", True, "", "2,999", "@Uber_Support I need help"),
+        row("2", "Uber_Support", False, "1", "", "We can help with that."),
     ]
 
     assert derive_uber_history(records) == ()
@@ -81,9 +99,6 @@ def test_real_processed_uber_sample_runs_when_present():
 
     assert records
     assert REQUIRED <= set(records[0])
-
-    for record in records:
-        record["inbound"] = str(record["inbound"]).strip().lower() == "true"
 
     result = derive_uber_history(records)
 
