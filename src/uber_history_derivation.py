@@ -96,6 +96,8 @@ def derive_uber_history(
         else:
             parent_id = str(parent).strip()
             if parent_id not in by_id:
+                # The sampled corpus can legitimately omit a root's ancestor;
+                # the root itself is still evaluated independently below.
                 continue
             children[parent_id].add(tweet_id)
 
@@ -103,6 +105,10 @@ def derive_uber_history(
             if child_id not in by_id:
                 missing_child_context.add(tweet_id)
 
+    # The closure builder can leave dangling ``response_tweet_id`` references
+    # for tweets whose parents are outside the selected Uber slice.  Treat a
+    # missing child as unresolved only when it should be part of the root's
+    # reconstructed conversation; independent roots are otherwise evaluated.
     derived: list[DerivedReply] = []
 
     for root_id in roots:
