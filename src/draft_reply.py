@@ -15,6 +15,13 @@ class ReplyLike(Protocol):
     similarity: float
 
 
+class RetrieverLike(Protocol):
+    """Minimal retrieval interface required by the drafter."""
+
+    def search(self, query: str, top_k: int = 5) -> Sequence[ReplyLike]:
+        ...
+
+
 @dataclass(frozen=True)
 class DraftReplyResult:
     """A generated support reply and the evidence used to ground it."""
@@ -64,17 +71,26 @@ Historical resolved-reply examples:
 
 def draft_reply(
     customer_text: str,
-    retrieved_replies: Sequence[ReplyLike],
+    retriever: RetrieverLike,
     llm_client: GroqLLMClient,
+    *,
+    top_k: int = 5,
 ) -> DraftReplyResult:
-    """Generate a grounded reply through the shared GroqLLMClient."""
+    """Retrieve historical replies and synthesize one grounded response."""
+    if not isinstance(customer_text, str) or not customer_text.strip():
+        raise ValueError("customer_text must be a non-empty string")
+
     if not isinstance(llm_client, GroqLLMClient):
         raise TypeError("llm_client must be a GroqLLMClient")
 
+    if not isinstance(top_k, int) or isinstance(top_k, bool) or top_k <= 0:
+        raise ValueError("top_k must be a positive integer")
+
+    retrieved_replies = retriever.search(customer_text.strip(), top_k=top_k)
     prompt = build_draft_prompt(customer_text, retrieved_replies)
     reply = llm_client.complete(prompt)
 
-    if not reply.strip():
+    if not isinstance(reply, str) or not reply.strip():
         raise ValueError("LLM returned an empty draft reply")
 
     evidence = tuple(item.text for item in retrieved_replies)
