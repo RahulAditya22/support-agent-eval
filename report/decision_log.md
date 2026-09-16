@@ -23,3 +23,13 @@
 - Records are admitted only when `author_type == "agent"` and `thread_status` is `resolved` or `completed`; customer-authored records and open/other-status records are excluded. Records missing the required provenance fields raise `ValueError` rather than being guessed or silently accepted.
 - Operationally, this means the repository currently has a provenance validation boundary, not a raw-Kaggle resolution-status derivation algorithm. A future dataset-specific reconstruction must establish these fields from documented evidence before the resulting replies are used for retrieval.
 - Threads that do not cleanly establish both authorship and resolution/completion remain outside the retrieval corpus rather than being classified by inference.
+
+### D-Phase3-02 — Adopt narrow raw-TWCS heuristic for retrieval corpus construction
+- **Choice: Option A.** Given the deadline, a deterministic raw-data heuristic is used instead of waiting for a small hand-reviewed retrieval corpus.
+- `author_type == "agent"` is derived only when `inbound == False` and `author_id == "Uber_Support"`.
+- A thread is heuristically `resolved` only when it is reconstructable from `tweet_id` / `in_response_to_tweet_id` and has an inbound Uber root where every terminal message is an Uber outbound message.
+- Forward `response_tweet_id` links are also checked: if a row references a child tweet that is absent from the local reconstruction, that root thread is treated as incomplete and excluded.
+- This is a structural eligibility heuristic, not evidence that the customer was satisfied or that the response actually solved the issue.
+- **This explicitly reverses D-Phase3-01's no-heuristic stance.** D-Phase3-01 remains the validation boundary for explicitly annotated records; D-Phase3-02 adds the raw-data derivation layer that produces those annotations.
+- **Headline-number caveat:** retrieval/evaluation metrics using this corpus must state that the corpus is heuristically resolved, not human-verified. Metrics therefore should not be presented as performance against a human-labeled resolution corpus.
+- Threads that do not satisfy the heuristic are excluded rather than forced into `resolved`.
