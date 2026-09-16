@@ -72,7 +72,7 @@ def test_pipeline_wires_classifier_retriever_and_llm():
     assert len(classifier_calls) == 1
     assert classifier_calls[0][0] == "Why was I charged this fare?"
     assert callable(classifier_calls[0][1])
-    assert classifier_calls[0][1] is llm.complete
+    assert classifier_calls[0][1] == llm.complete
     assert retriever.queries == [("Why was I charged this fare?", 1)]
     assert len(llm.calls) == 2
 
