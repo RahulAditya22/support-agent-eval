@@ -87,7 +87,7 @@ def derive_uber_history(
 
     children: dict[str, set[str]] = {tweet_id: set() for tweet_id in by_id}
     roots: list[str] = []
-    missing_child_context: set[str] = set()
+    referenced_children: dict[str, set[str]] = {tweet_id: set() for tweet_id in by_id}
 
     for tweet_id, row in by_id.items():
         parent = row["in_response_to_tweet_id"]
@@ -98,13 +98,8 @@ def derive_uber_history(
             if parent_id in by_id:
                 children[parent_id].add(tweet_id)
 
-    # Validate response references only when they point to an ID that is
-    # present in the sampled corpus's graph. A response ID may legitimately
-    # belong to a tweet outside the selected root's connected component.
-    for tweet_id, row in by_id.items():
         for child_id in _parse_ids(row["response_tweet_id"]):
-            if child_id not in by_id:
-                missing_child_context.add(tweet_id)
+            referenced_children[tweet_id].add(child_id)
 
     derived: list[DerivedReply] = []
 
@@ -126,10 +121,18 @@ def derive_uber_history(
         if not thread_ids:
             continue
 
-        # A dangling response reference in a member of this root thread is
-        # still treated as incomplete, preserving the conservative synthetic
-        # and real-corpus provenance rules.
-        if thread_ids & missing_child_context:
+        # A response_tweet_id can point outside the selected sample. Missing
+        # descendants are only considered incomplete when the missing ID is
+        # also structurally expected to be a child of this thread.
+        incomplete = False
+        for current in thread_ids:
+            for child_id in referenced_children[current]:
+                if child_id not in by_id:
+                    incomplete = True
+                    break
+            if incomplete:
+                break
+        if incomplete:
             continue
 
         terminals = [tweet_id for tweet_id in thread_ids if not children.get(tweet_id)]
