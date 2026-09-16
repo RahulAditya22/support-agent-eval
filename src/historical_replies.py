@@ -1,9 +1,9 @@
-"""Validated data contract for historical resolved support replies."""
+"""Validated data contract and selection logic for historical resolved replies."""
 
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Iterable
+from typing import Iterable, Mapping, Any
 
 
 @dataclass(frozen=True)
@@ -14,6 +14,40 @@ class HistoricalReply:
     thread_id: str
     author_type: str
     thread_status: str
+
+
+def select_historical_replies(
+    records: Iterable[Mapping[str, Any]],
+) -> tuple[HistoricalReply, ...]:
+    """Select only agent-authored replies attached to resolved/completed threads.
+
+    The upstream data adapter must provide explicit ``author_type`` and
+    ``thread_status`` fields. This function does not infer resolution from
+    message text or reply position.
+    """
+    selected: list[HistoricalReply] = []
+
+    for record in records:
+        reply = HistoricalReply(
+            text=str(record.get("text", "")),
+            thread_id=str(record.get("thread_id", "")),
+            author_type=str(record.get("author_type", "")),
+            thread_status=str(record.get("thread_status", "")),
+        )
+
+        if reply.author_type != "agent":
+            continue
+        if reply.thread_status not in {"resolved", "completed"}:
+            continue
+        if not reply.text.strip() or not reply.thread_id.strip():
+            continue
+
+        selected.append(reply)
+
+    if not selected:
+        raise ValueError("no valid resolved agent replies were selected")
+
+    return tuple(selected)
 
 
 def validate_historical_replies(
