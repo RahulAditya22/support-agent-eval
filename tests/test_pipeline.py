@@ -29,7 +29,12 @@ class FakeRetriever:
 
     def search(self, query: str, top_k: int = 5):
         self.queries.append((query, top_k))
-        return [FakeRetrievedReply("Please share the trip receipt so we can review the fare.", 0.91)]
+        return [
+            FakeRetrievedReply(
+                "Please share the trip receipt so we can review the fare.",
+                0.91,
+            )
+        ]
 
 
 def test_pipeline_wires_classifier_retriever_and_llm():
@@ -43,8 +48,12 @@ def test_pipeline_wires_classifier_retriever_and_llm():
         reason="Customer disputes the fare charged for a trip.",
     )
 
-    def fake_classifier(customer_text, llm_client):
-        classifier_calls.append((customer_text, llm_client))
+    def fake_classifier(customer_text, llm_call):
+        classifier_calls.append((customer_text, llm_call))
+        assert callable(llm_call)
+        assert llm_call(
+            "classification test prompt"
+        ) == "Please share the trip receipt so we can review the fare."
         return expected
 
     result = run_pipeline(
@@ -60,9 +69,12 @@ def test_pipeline_wires_classifier_retriever_and_llm():
         reply="Please share the trip receipt so we can review the fare.",
         evidence=("Please share the trip receipt so we can review the fare.",),
     )
-    assert classifier_calls == [("Why was I charged this fare?", llm)]
+    assert len(classifier_calls) == 1
+    assert classifier_calls[0][0] == "Why was I charged this fare?"
+    assert callable(classifier_calls[0][1])
+    assert classifier_calls[0][1] is llm.complete
     assert retriever.queries == [("Why was I charged this fare?", 1)]
-    assert len(llm.calls) == 1
+    assert len(llm.calls) == 2
 
 
 def test_pipeline_rejects_blank_customer_text():
