@@ -1,69 +1,78 @@
-# Phase 1 EDA — Uber_Support Sample
+# Phase 1 — Dataset and EDA Notes
 
-## Source and sampling
+## Source and scope
 
-- Source: Kaggle **Customer Support on Twitter** dataset (`thoughtvector/customer-support-on-twitter`).
-- Local full file: `data/raw/twcs/twcs.csv`.
-- Full dataset rows observed locally: **2,811,774**.
-- Sampling script uses a fixed random seed of **42**.
-- Seed selection: **4,000** tweets whose text contains the exact handle `@Uber_Support`.
-- For each seed, directly linked parent and response tweet IDs were collected where available.
-- The resulting sample contains **7,225 unique tweets**.
-- The uploaded sample was independently re-read and validated before processing.
+The assignment uses the Kaggle **Customer Support on Twitter** dataset (`thoughtvector/customer-support-on-twitter`). The selected brand is `Uber_Support`.
 
-## Schema
+The raw dataset was downloaded locally and is not committed to the repository. Uber-directed tweets were identified using the case-insensitive text-mention pattern `@Uber_Support\b`.
 
-The dataset contains seven fields:
+## Data volume and date validation
 
-`tweet_id`, `author_id`, `inbound`, `created_at`, `text`, `response_tweet_id`, `in_response_to_tweet_id`.
+The full dataset contains **46,626 Uber-directed tweets** based on the text-mention filter.
 
-There is **no `company` column** in the actual `twcs.csv`; brand targeting therefore uses the `@Uber_Support` handle in tweet text.
+The assignment's collection window is **2017-04-27 through 2017-12-03**. After parsing `created_at` using the dataset's timestamp format:
 
-## Validation and cleaning
+- **46,608 tweets** fall within the assignment's collection window.
+- **18 tweets** fall outside the collection window. These are real, successfully parsed timestamps dated in 2014–2016 (and immediately before the stated 2017-04-27 start date), rather than timestamp parsing failures.
+- **0 timestamps** failed to parse (`NaT`).
+- The in-window period covers **221 calendar days**, of which **97 have zero Uber-directed tweets**.
 
-- Rows: **7,225**
-- Unique `tweet_id`: **7,225**
-- Duplicate tweet IDs: **0**
-- Invalid timestamps using the Twitter format `%a %b %d %H:%M:%S %z %Y`: **0**
-- Exact duplicate text values: **89** (these are not removed solely on text equality because different tweets can legitimately contain the same wording).
-- Inbound rows: **4,332**
-- Outbound rows: **2,893**
-- Rows mentioning `@Uber_Support`: **4,326**
-- Unique authors: **3,703**
+The 18 out-of-window records were excluded from the daily-volume and incident analysis. This produces a clean in-window population of **46,608 tweets**.
 
-Identifier columns are normalized to string IDs so values such as `1445366.0` produced by CSV parsing are matched consistently with `1445366`.
+## Daily volume distribution
 
-## Conversation reconstruction
+Across the 221-day collection window:
 
-Conversation relationships are represented by `in_response_to_tweet_id` and `response_tweet_id`. Within this sample, **3,378** rows have a parent reference that resolves to another sampled tweet, and **3,203** rows have at least one response reference that resolves within the sample.
+- **Mean daily volume:** 210.9 tweets/day
+- **Median daily volume:** 1 tweet/day
 
-Using resolved within-sample edges, the sample forms **3,847 connected conversation components**. Component sizes range from 1 to 9 tweets; **845 components are singletons**. This confirms that the sample contains usable short conversation context, while also showing that the sampling strategy does not recover every full thread from the original dataset.
+The large difference between the mean and median indicates a highly skewed volume distribution. The mean should therefore not be treated as a typical day's volume.
 
-## Volume and date checks
+Volume is concentrated in a relatively small number of high-volume days. Among the 46,608 in-window tweets:
 
-The validated sample spans **2017-04-27 through 2017-12-03**.
+- The **top 10 days account for 11,013 tweets (23.63%)**.
+- The **top 15 days account for 15,686 tweets (33.66%)**.
 
-- Mean daily sample volume: **97.6**
-- Median daily sample volume: **105**
-- Maximum daily sample volume: **227**
+The top-volume days are clustered almost entirely in **November 1, November 14–30, and December 1–2, 2017**. The single highest-volume day is **December 1, 2017, with 1,359 Uber-directed tweets**.
 
-For the assignment's specified spike dates:
+This concentration is important when interpreting the overall mean: the 210.9 tweets/day figure is strongly influenced by a relatively small number of high-volume days, while many days have very little or no Uber-directed activity.
 
-- **2017-09-22:** 0 sampled tweets. The random Uber-focused sample does **not** contain enough observations on this date to independently verify a spike.
-- **2017-11-21:** **159** sampled tweets, including **92** tweets mentioning `@Uber_Support`. This is one of the highest-volume dates in the sample, but the sample alone should not be treated as proof of a full-dataset spike.
+## Incident-date checks
 
-The final report should distinguish **sample evidence** from claims about the full 2.8M-row dataset.
+### 2017-09-22 — TfL license revocation
 
-## Reproducibility
+The full in-window dataset contains **7 Uber-directed tweets on 2017-09-22**.
 
-The processed sample can be regenerated from the locally downloaded Kaggle file using:
+The surrounding week is also low-volume, averaging approximately **5 tweets/day**. The date is therefore **not supported as a volume spike** in this dataset.
 
-```powershell
-py data/subsample_uber.py
-```
+The data can establish the observed Twitter-volume pattern, but it does not establish the cause of that pattern.
 
-The sampler's random seed is fixed at `42`. Raw data remain excluded from Git by `.gitignore`.
+### 2017-11-21 — breach disclosure
+
+The full in-window dataset contains **917 Uber-directed tweets on 2017-11-21**.
+
+This date falls within a sustained high-volume period, with several nearby dates also reaching hundreds or more than 1,000 Uber-directed tweets. The period includes **December 1, 2017, which has 1,359 tweets and is the single highest-volume day in the dataset**.
+
+Accordingly, the appropriate interpretation is **elevated activity in this period, of which November 21 is one part**.
+
+The volume pattern does **not** by itself confirm the breach-disclosure hypothesis. December 1 and several other nearby dates have equal or higher activity without a corresponding known incident being attached to them in this analysis. Incident causality therefore remains outside what can be established from tweet volume alone.
+
+## Pipeline sample integrity
+
+The reproducible pipeline sample was constructed from the full Uber-directed population using a fixed seed and linked parent/response records.
+
+A direct tweet-ID comparison confirmed that **0 of the 18 out-of-window Uber-directed records are present in `data/processed/uber_support_sample.csv`**.
+
+Therefore, the existing **4,000-row Uber-directed seed pipeline sample is uncontaminated by the identified out-of-window records**.
+
+The processed sample remains the working artifact for subsequent pipeline development and evaluation and was not replaced by the full-data incident analysis.
 
 ## Phase 1 conclusion
 
-The sample is suitable for the next phase because it contains Uber-directed customer messages plus directly linked context, preserves the original conversation-link fields, and has reproducible sampling and validated timestamps. Phase 2 intent discovery should explicitly account for the fact that this is a linked-context subsample rather than the complete Uber conversation corpus.
+The full-data check resolves the initial date-range discrepancy and provides a corrected basis for the incident analysis.
+
+The dataset contains **46,608 Uber-directed tweets within the assignment's 2017-04-27–2017-12-03 collection window**, with no timestamp parsing failures. Daily volume is highly skewed: the median is 1 tweet/day while the mean is 210.9 tweets/day, and the top 15 days account for 33.66% of all in-window Uber-directed tweets.
+
+The full-data evidence does **not** support a volume spike on September 22, 2017. November 21, 2017 is part of a sustained period of elevated Twitter activity, but the volume pattern alone does not establish that the period was caused by the breach disclosure.
+
+These findings are used only to characterize the dataset and its observed support-volume patterns; they are not treated as evidence of incident causality.
