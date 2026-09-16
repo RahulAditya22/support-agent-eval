@@ -95,20 +95,17 @@ def derive_uber_history(
             roots.append(tweet_id)
         else:
             parent_id = str(parent).strip()
-            if parent_id not in by_id:
-                # The sampled corpus can legitimately omit a root's ancestor;
-                # the root itself is still evaluated independently below.
-                continue
-            children[parent_id].add(tweet_id)
+            if parent_id in by_id:
+                children[parent_id].add(tweet_id)
 
+    # Validate response references only when they point to an ID that is
+    # present in the sampled corpus's graph. A response ID may legitimately
+    # belong to a tweet outside the selected root's connected component.
+    for tweet_id, row in by_id.items():
         for child_id in _parse_ids(row["response_tweet_id"]):
             if child_id not in by_id:
                 missing_child_context.add(tweet_id)
 
-    # The closure builder can leave dangling ``response_tweet_id`` references
-    # for tweets whose parents are outside the selected Uber slice.  Treat a
-    # missing child as unresolved only when it should be part of the root's
-    # reconstructed conversation; independent roots are otherwise evaluated.
     derived: list[DerivedReply] = []
 
     for root_id in roots:
@@ -119,17 +116,20 @@ def derive_uber_history(
 
         stack = [root_id]
         thread_ids: set[str] = set()
-        incomplete = False
         while stack:
             current = stack.pop()
             if current in thread_ids:
                 continue
             thread_ids.add(current)
-            if current in missing_child_context:
-                incomplete = True
             stack.extend(children.get(current, ()))
 
-        if incomplete:
+        if not thread_ids:
+            continue
+
+        # A dangling response reference in a member of this root thread is
+        # still treated as incomplete, preserving the conservative synthetic
+        # and real-corpus provenance rules.
+        if thread_ids & missing_child_context:
             continue
 
         terminals = [tweet_id for tweet_id in thread_ids if not children.get(tweet_id)]
