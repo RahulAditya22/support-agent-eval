@@ -51,23 +51,47 @@ if uber.empty:
 
 seed_n = min(TARGET_UBER_TWEETS, len(uber))
 seed_tweets = uber.sample(n=seed_n, random_state=SEED)
-
 seed_ids = set(seed_tweets["tweet_id"].dropna())
-parent_ids = set(seed_tweets["in_response_to_tweet_id"].dropna())
 
-response_ids = set()
-for value in seed_tweets["response_tweet_id"].dropna():
-    for tweet_id in str(value).split(","):
-        tweet_id = tweet_id.strip()
-        if tweet_id:
-            response_ids.add(tweet_id)
+# Build a complete parent -> children index from the full corpus.  The prior
+# implementation only followed the seed rows' explicit parent/response IDs,
+# which truncated multi-turn conversations.  We instead expand the selected
+# seed IDs to a fixed point over both graph directions.
+by_id = df.dropna(subset=["tweet_id"]).drop_duplicates("tweet_id").set_index("tweet_id")
+parent_to_children = {}
+for row in df[["tweet_id", "in_response_to_tweet_id"]].dropna(subset=["tweet_id"]).itertuples(index=False):
+    tweet_id = row.tweet_id
+    parent_id = row.in_response_to_tweet_id
+    if pd.notna(parent_id) and parent_id:
+        parent_to_children.setdefault(parent_id, set()).add(tweet_id)
 
-related_ids = seed_ids | parent_ids | response_ids
+related_ids = set(seed_ids)
+frontier = set(seed_ids)
+
+while frontier:
+    discovered = set()
+    for tweet_id in frontier:
+        row = by_id.loc[tweet_id] if tweet_id in by_id.index else None
+        if row is not None:
+            parent_id = row["in_response_to_tweet_id"]
+            if pd.notna(parent_id) and parent_id:
+                discovered.add(parent_id)
+            value = row["response_tweet_id"]
+            if pd.notna(value):
+                for response_id in str(value).split(","):
+                    response_id = response_id.strip()
+                    if response_id:
+                        discovered.add(response_id)
+        discovered.update(parent_to_children.get(tweet_id, set()))
+
+    discovered -= related_ids
+    if not discovered:
+        break
+    related_ids.update(discovered)
+    frontier = discovered
 
 print(f"Seed tweet IDs: {len(seed_ids):,}")
-print(f"Parent IDs: {len(parent_ids):,}")
-print(f"Response IDs: {len(response_ids):,}")
-print(f"Total related IDs: {len(related_ids):,}")
+print(f"Recursively closed related IDs: {len(related_ids):,}")
 
 sample = df[df["tweet_id"].isin(related_ids)].copy()
 
