@@ -1,6 +1,6 @@
 import pytest
 
-from metrics import classification_metrics, cohen_kappa, pearson_correlation, top_k_recall
+from eval.metrics import classification_metrics, cohen_kappa, pearson_correlation, top_k_recall
 
 
 def test_classification_metrics():
