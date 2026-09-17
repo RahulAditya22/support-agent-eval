@@ -1,0 +1,228 @@
+tweet_id,text,predicted_intent,human_intent_label,human_auto_handle_label,notes
+2820770,"Hey @Uber_Support! Extremely unprofessional driver who refused to come to pick up location. When I cancelled and tried to rebook, your app matched me to the same guy. https://t.co/APSwZ4fjdO",cancellation_no_show_charge,driver_partner_safety_issue,FALSE,
+1339906,@Uber_Support Thanks I wasn't charged a cancellation fee -- the driver left me in the street ðŸ˜©he said he doesn't drive from DC to VA and drove away.,cancellation_no_show_charge,driver_partner_safety_issue,FALSE,
+1287689,Requested @115873 &amp; driver cancelled! (No consequences!) happy to be with @115879 driver now!,cancellation_no_show_charge,cancellation_no_show_charge,FALSE,
+979752,"@Uber_Support An irritated driver who cancelled the trip at the pickup point, he entered into a verbal fight when asked the reason",cancellation_no_show_charge,driver_partner_safety_issue,FALSE,
+1395183,@Uber_Support Two times i booked cabs first driver took my ride and cancelled by reaching at my location and ur company charged 42 rs as fine,cancellation_no_show_charge,cancellation_no_show_charge,FALSE,
+2720677,"@Uber_Support
+Uber has gone bonkers.
+Their charges are now higher than regular Taxi
+Their drivers aren't professionals, they can't reach you on time, especially in downtown areas, some are novices &amp; some â‚©ont understand English
+In frustration they cancel the trip&amp; charge $5.75",cancellation_no_show_charge,cancellation_no_show_charge,FALSE,
+2103877,@Uber_Support Just had a driver unable to follow my instructions for picking me up cancel my ride after I waited 20m for him. I canâ€™t even leave him feedback?!,cancellation_no_show_charge,cancellation_no_show_charge,FALSE,
+2258567,@Uber_Support @115873 my driver cancelled the trip and became abusive . You guys charged me cancellation fee https://t.co/FYWaPYD7nX,cancellation_no_show_charge,driver_partner_safety_issue,FALSE,Abusive behavior + cancellation charge; safety takes priority
+585075,As if @115873 charged me Â£6.80 for a CANCELLED trip surely thatâ€™s robbery lmao,cancellation_no_show_charge,cancellation_no_show_charge,FALSE,
+384221,"@115873 ur app needs development, ur vehicle isn't reaching by the expected time n u whn the customer cancels u charge the cancellation??",cancellation_no_show_charge,cancellation_no_show_charge,FALSE,
+1387801,Hey @Uber_Support I need pointing in the right direction regarding cancellation fee refunds? I was cancelled on by the same driver twice ðŸ˜’,cancellation_no_show_charge,cancellation_no_show_charge,FALSE,
+2629063,".@116276 @115873 I've picked up a # of riders complaining about being charged for cancelled calls, while talking to/looking at drivers. I've experienced it myself, as a rider. Customer service? I think not. There are some rude, scheming can't-drive drivers out there. Please fix it.",cancellation_no_show_charge,cancellation_no_show_charge,FALSE,
+165831,@Uber_Support Cancellation from our side you are not looking for any thing at all simple deduct cancellation charge now why  you looking for I want cancellation charge,cancellation_no_show_charge,cancellation_no_show_charge,FALSE,
+370851,@Uber_Support this driver has been sitting her for almost 10 minutes. Still hasnâ€™t even cancelled or contacted me https://t.co/4uRFfHDAEv,cancellation_no_show_charge,cancellation_no_show_charge,FALSE,
+948957,@115873 I love it when my Uber driver cancels *after* I get in the car b/c I wasn't on his way home ðŸ¤¦â€â™‚ï¸,cancellation_no_show_charge,cancellation_no_show_charge,FALSE,
+1692665,Hey @Uber_Support why are riders charged $5 for cancelling a ride after 5m but flaky drivers who cancel last minute on customers are not??,cancellation_no_show_charge,cancellation_no_show_charge,FALSE,
+1345713,@Uber_Support The driver himself cancelled the ride aftr nt shown up on confirm location nd i got a fine of 42. @Uber_Support   Seriously worst experience,cancellation_no_show_charge,cancellation_no_show_charge,FALSE,
+531705,"Hi, how do I report a driver that donâ€™t want to pick up but refuse to cancel either? @Uber_Support",cancellation_no_show_charge,cancellation_no_show_charge,FALSE,Report driver refusing pickup/cancel
+1453760,"@Uber_Support  I have booked a ride under uber of rs 59, the drive said that he can't come and to cancel the trip.cancellation CHARGES RS 42, then i called him and said that you only cancel the trip but he won't cancel the trip and told to wait for30 min.",cancellation_no_show_charge,cancellation_no_show_charge,FALSE,
+287540,@134365 @Uber_Support DRIVER DIDNT PICK ME UP FOR UBERPOOL BUT MY STATUS CHANGED TO â€œON TRIPâ€ AND WAS CHARGED WITH THE CANCELLATION FEE???,cancellation_no_show_charge,cancellation_no_show_charge,FALSE,
+653015,@Uber_Support it was not cancelation fee as per the link you shared. the transaction is flagged as fraud now via my bank,unauthorized_transaction,unauthorized_transaction,FALSE,
+1034292,@Uber_Support You are not replying on mails properly so I have to bring this issue on social platforms.. As it's a case of fraud,unauthorized_transaction,unauthorized_transaction,FALSE,
+443056,@Uber_Support I have attached another method still it says invalid Ur system is fraud return my money,unauthorized_transaction,payment_refund_billing,FALSE,Claims fraud + return money
+476495,@Uber_Support what a fuck is upfront fare adjustment? Uber is stolen money from riders with this shit.,unauthorized_transaction,fare_price_dispute,FALSE,"Upfront fare adjustment complaint, stolen money claim"
+2619981,@Uber_Support my girl friend has over 300 dollars worth of fraud charges from you and can't get anyone to help with this,unauthorized_transaction,unauthorized_transaction,FALSE,
+2818822,"@115873 @Uber_Support Still awaiting a reply from @115873 and @Uber_Support regarding the fraud they did, taking my hard earned money and then refusing to even entertain a discussion regarding it.",unauthorized_transaction,unauthorized_transaction,FALSE,
+1488627,@Uber_Support why the app is not working it keep saying unauthorization.,unauthorized_transaction,account_login_app_access,FALSE,
+2344146,@Uber_Support @677928 Purav they are fraud they don't reply to anyone they don't understand why does urgent mean,unauthorized_transaction,other_out_of_scope,FALSE,
+930035,"@116288 @115873 @15316 Is this normal for @115873 to be fooling around?
+Yet again I get the same response.
+Arrange a call back from a senior person right now #fraud",unauthorized_transaction,other_out_of_scope,FALSE,
+2728326,@Uber_Support Shameless guys big tune fraud star are @Uber_Support @115873 . I am seriously thinking to request for petition to submit to govt to urge them to put a ban on such cheater.,unauthorized_transaction,other_out_of_scope,FALSE,
+926838,@Uber_Support Iâ€™ve vey messaging all day several notes for urgent contact. Unauthorised transactions made from Uber whilst Iâ€™m at work ?,unauthorized_transaction,unauthorized_transaction,FALSE,
+346778,@Uber_Support Your rep asks me to read tncs whereas he hasnâ€™t even read my issue. #doublestandards #fraud @Uber_Support,unauthorized_transaction,unauthorized_transaction,FALSE,
+363019,"Now @115873 @Uber_Support has reactivated my acct and itâ€™s not linked to my number, making me open to fraud. I need someone to contact me ASAP",unauthorized_transaction,account_login_app_access,FALSE,
+2905860,Someone has used my card for $300 in unauthorized transactions. How can I reach you by phone? @115873,unauthorized_transaction,unauthorized_transaction,FALSE,
+2812956,@Uber_Support Receiving more unauthorized charges as I type this tweet. When can I expect help?,unauthorized_transaction,unauthorized_transaction,FALSE,
+31981,"@115873 worst service, no place to report frauds? You are beggers. #fraud  company",unauthorized_transaction,other_out_of_scope,FALSE,
+1138519,@Uber_Support @116276 @115873 Why aren't you providing the correct invoice? Why doing such kind of Fraud? Why are you cheating your customers?,unauthorized_transaction,payment_refund_billing,FALSE,
+466751,"@116276 @116288 @115873 @Uber_Support : fraud by uber.
+Uber app did not allocated cab and in end showing as cancelled by me in app.
+Fraud by Uber
+#Uber #BanUberInIndia
+@116276 : Please take action and don't be careless.
+Check pics attached to thus tweet https://t.co/G67FqdpxEs",unauthorized_transaction,missing_incomplete_ride,FALSE,
+1986086,@Uber_Support I keep getting unauthorized charges to my paypal from Uber Technologies... can you help?,unauthorized_transaction,unauthorized_transaction,FALSE,
+1250297,@Uber_Support fare increased from 124 to 195 with no traffic and no GPS issues.  Are you kidding me? Your app is a total fraud.,unauthorized_transaction,fare_price_dispute,FALSE,
+619644,@Uber_Support @267057 And you guys refuse to do that I've lost too much not to mention you guys not having the history of my money in my account even my name was wrong on my page until I corrected it at the inspection station in Northridge you guys are lucky I don't have the money to hire a lawyer,fare_price_dispute,payment_refund_billing,FALSE,
+349467,@Uber_Support instead of upfront price.. huge amount was charged. Trip date 7th oct morning. You need to re view this once again..even invoice is wrong,fare_price_dispute,fare_price_dispute,FALSE,
+727771,"@Uber_Support @294339 surge sounds like david patreus in Irak
+what this actual is = algorithm to fuck you over. same as one to screw wages or fire not pay driver",fare_price_dispute,fare_price_dispute,FALSE,
+939452,@115873 @Uber_Support The customer app shows you what they are charging you however if you make it there quicker and drive the correct navigation they are clearly overcharging. I had a fair this morning that paid $15 more than what they should.,fare_price_dispute,fare_price_dispute,FALSE,
+19718,@Uber_Support These bums are crooks. Stay away and use LYFT. charged me $154 for a airport trip more than my freakin plane ticket,fare_price_dispute,fare_price_dispute,FALSE,
+8649,@115873 Fuck your surge charges,fare_price_dispute,fare_price_dispute,FALSE,
+1308648,Nothing like blocking surge screwing drivers right @6980 @Uber_Support https://t.co/1G5lLzrKwX,fare_price_dispute,fare_price_dispute,FALSE,
+1765302,"@Uber_Support Not worth messing with some dude who's just trying to make a living, but annoying to be overcharged unfairly. 2nd time it's happened (1/2)",fare_price_dispute,fare_price_dispute,FALSE,
+2820752,@Uber_Support Your driver  is overcharged  to me,fare_price_dispute,fare_price_dispute,FALSE,
+868127,"@218193 yes, in fact I have. But I cancel the ride and send a complaint THEN IN TOLD BY @Uber_Support that I complain too much.",fare_price_dispute,other_out_of_scope,FALSE,
+622764,Hello @Uber_Support @119983 I was overcharged for the attached trip. When I availed the trip the fare was displayed as Rs.85. Request you to please look into this. https://t.co/qtxJ6xF3pF,fare_price_dispute,fare_price_dispute,FALSE,
+674446,"@Uber_Support need help regarding a trip, was overcharged, kindly revert..",fare_price_dispute,fare_price_dispute,FALSE,
+8610,@115873 they don't tell you about the surge cost though I paid Â£18.67 to travel 3 miles !! #ripoff,fare_price_dispute,fare_price_dispute,FALSE,
+122359,@115873 I was overcharged more than $100 for my ride home from Mccarren airport in Las Vegas today!  WTF?!,fare_price_dispute,fare_price_dispute,FALSE,
+897212,@115873 I am now stranded cause of your surge FUCK YOU,fare_price_dispute,fare_price_dispute,FALSE,
+2720675,"@Uber_Support Everyday there's a new feature new charge in the name of taxes &amp; now the funniest charge is the SURGE Charge! The explanation is: Drivers in your area are in high demand, so IF you agree to pay the Surge Charge he'll come to you. WTF? To come to a Train Station its a high demand?",fare_price_dispute,fare_price_dispute,FALSE,
+2375505,"Hopefully @115873 answers my complaint quickly, since I was overcharged after my driver neglected to end my trip until 10 minutes after I got out of the car.",fare_price_dispute,fare_price_dispute,FALSE,
+2729251,"@115873 @Uber_Support You charged me for a trip to Pretoria I did not go on, I was dropped off in Rosebank, picked up in Parkhurst. The charge is Parkhurst to Pretoria. In email you keep saying â€œnothing wrong with fareâ€ please fix this!",fare_price_dispute,fare_price_dispute,FALSE,
+552583,"@Uber_Support Saying that @1143 do not provide incentives and surge benefits to them that's why most of the time driver used to switch over to you and on their all very few cabs are available and for which I have to pay a big penalty ""I missed my flight,""",fare_price_dispute,fare_price_dispute,FALSE,
+1675609,@Uber_Support So means surge pricing is still prevailing right...,fare_price_dispute,fare_price_dispute,FALSE,
+2972050,@Uber_Support I had the app notify me when the ride passes are available but I didnâ€™t get an email and when I checked the app the passes are already gone. Can I purchase it another way?,missing_incomplete_ride,ride_pass_promotion_coupon,FALSE,
+2502208,"Love it when my @Uber_Support driver decides to chancel the trio after I've been waiting 15 minutes for him. I literally saw him drive past me too, same reg plates and everything",missing_incomplete_ride,cancellation_no_show_charge,FALSE,
+2520885,@Uber_Support @115873  still waiting for a contact number for my cab driver that's left with my stuff!!! NO ANDWER... other than your looking into it... u don't even have my contact details!,missing_incomplete_ride,driver_partner_safety_issue,FALSE,
+457899,"@Uber_Support For last two weeks (before holiday), app's timing has been off saying driver is xx mins away, but the driver is waiting or come and gone. Told phn cust svc to no avail.",missing_incomplete_ride,missing_incomplete_ride,FALSE,
+2827714,@Uber_Support driver is not picking up my call waiting at pickup point from last 20 min. He is not even bothered to answer call MH02EH3969 driver name ganesh,missing_incomplete_ride,missing_incomplete_ride,FALSE,
+470277,"@Uber_Support by the way, I am getting pretty annoyed with drivers who do not go to the right pick up location, and then charge US waiting time. Just had another driver do this to my daughter this afternoon.",missing_incomplete_ride,fare_price_dispute,FALSE,
+1805859,Uber cab does come after waiting and cab driver doesn't bother to receive cal @Uber_Support #ubersucks https://t.co/F0bbx3PUKa,missing_incomplete_ride,missing_incomplete_ride,FALSE,
+1211255,@Uber_Support HELP ME.... I'm here in BANG BANG ALI and your uber driver is waiting outside for me with a SAMURAI sword to cut me down! HELP,missing_incomplete_ride,driver_partner_safety_issue,FALSE,
+2110747,@Uber_Support @115873 your DRIVER JUST REFUSED ME A TRIP TOLD GET OUT NO IM NOT HERE TO PICK YOU UPâ€¼ï¸ Name Lei he said Discrimination Legal https://t.co/gMPATR0UMn,missing_incomplete_ride,driver_partner_safety_issue,FALSE,
+349654,"@Uber_Support just charged me for a ride that I never took. I waited for the driver, called the driver - he never showed up, but charged me.",missing_incomplete_ride,missing_incomplete_ride,FALSE,
+1525390,@Uber_Support  @61441 how on earth am I being charged for drivers who are starting trips while Iâ€™m still here waiting for a driver? https://t.co/2H13C1E4Dn,missing_incomplete_ride,fare_price_dispute,FALSE,
+2266654,@Uber_Support I have been waiting for more than 15 mins and tried reaching this driver his phone was switched off. He should have informed me before hand or shouldnâ€™t have accepted the ride. Iâ€™ve been charged for this ride. Pls let me know the solution. https://t.co/fUJDo5MWK2,missing_incomplete_ride,cancellation_no_show_charge,FALSE,
+154559,"@Uber_Support Hifriends, once the documents are approved to be a driver, how long does it take to leave the waiting list and start driving?",missing_incomplete_ride,other_out_of_scope,FALSE,
+2659115,@Uber_Support Iâ€™ve been waiting an hour for my food because youâ€™ve been looking for a delivery driver for over half an hour. Seriously?,missing_incomplete_ride,uber_eats_order_delivery_issue,FALSE,
+2549551,@Uber_Support over 24hours waiting for to deliver on â€œwe will respond ASAPâ€ after driver fell asleep at wheel! Bet you take my money quicker,missing_incomplete_ride,missing_incomplete_ride,FALSE,
+1224641,@Uber_Support @115873 we kept on waiting and waiting but the time only adjusts and the driver keeps going away from my pick up point? https://t.co/kcsfT2FX6E,missing_incomplete_ride,missing_incomplete_ride,FALSE,
+520785,Put my trust in @115873 once again but the driver never showed up. Your company is absolutely disgraceful,missing_incomplete_ride,missing_incomplete_ride,FALSE,
+2437332,@Uber_Support @115873 We have been waiting for our uber driver for 25 mins. He is not answering calls. Please advise urgently.,missing_incomplete_ride,missing_incomplete_ride,FALSE,
+1048200,"Ysterday my chom @76008 ordered an @133311, whle waiting, a taxi driver stabbed him! Wht does uber do?Tells him to get out the uber! https://t.co/7ARuJvSQg3",missing_incomplete_ride,driver_partner_safety_issue,FALSE,
+2482796,"@Uber_Support I've contacted my driver an he is waiting on your response, My phone will not be delivered until you address my email.",missing_incomplete_ride,other_out_of_scope,FALSE,
+2075638,@Uber_Support I signed up a week ago to do ubereats and I haven't heard anything back yet,uber_eats_order_delivery_issue,uber_eats_order_delivery_issue,FALSE,
+2895370,@Uber_Support I ordered on UberEATS but before my stuff got halfway here it changed to delivered and Iâ€™ve been charged for food I donâ€™t have?? No way of contacting the rider either,uber_eats_order_delivery_issue,uber_eats_order_delivery_issue,FALSE,
+2390681,@148768 @115877 why canâ€™t i search you on my ubereats app? https://t.co/SB8YNEwxND,uber_eats_order_delivery_issue,uber_eats_order_delivery_issue,FALSE,
+996971,@Uber_Support #uber #ubereats #Lyft #lyf #CustomerService,uber_eats_order_delivery_issue,other_out_of_scope,FALSE,
+1472831,How can I get in immediate touch with your support team regarding a bad UberEats experience?  @Uber_Support,uber_eats_order_delivery_issue,uber_eats_order_delivery_issue,FALSE,
+673293,@Uber_Support @280596 I am a UberEats Driver and need help,uber_eats_order_delivery_issue,other_out_of_scope,FALSE,
+2923053,"@Uber_Support You did not resolve my issue of
+
+- 1600USD of uber eats credits that were properly earned by me.
+- You blocked me from using them before expiry with a pop up.
+- You have given me 4 days of run arounds on support.
+
+@116276 @127960 I referred 300+ customers to uber + ubereats. https://t.co/hmznXHQaCv",uber_eats_order_delivery_issue,payment_refund_billing,FALSE,
+2423533,Useles....Time to delete #ubereats,uber_eats_order_delivery_issue,other_out_of_scope,FALSE,
+949748,@Uber_Support my uber eats account isnâ€™t showing my gift card,uber_eats_order_delivery_issue,payment_refund_billing,FALSE,
+2810321,"@Uber_Support Do you're not. In fact your very unhelpful and are only trying to take this offline. My order is over 30mins late and counting. Support ""Alright, then I suggest you to kindly wait for the delivery.""",uber_eats_order_delivery_issue,uber_eats_order_delivery_issue,FALSE,
+1899888,first ubereats order is turning out to be a nightmare delivery drivers not on the phone is there a problem with Hammersmith Bridge closed,uber_eats_order_delivery_issue,uber_eats_order_delivery_issue,FALSE,
+2976701,@Uber_Support why is UberEATS support a huge uberfail tonight ? Wasted over 3 hours &amp; lost out on countless trips from being on hold for like 3 hours on 4 different numbers. Even messaged support via website,uber_eats_order_delivery_issue,uber_eats_order_delivery_issue,FALSE,Support failure for UberEats
+2390646,"@148768 @115877 What a waste of time! Waited for 20 minutes for @148768 London Bridge to confirm order, then it was cancelled! Now store isn't even on UberEats!",uber_eats_order_delivery_issue,uber_eats_order_delivery_issue,FALSE,
+2408867,@Uber_Support @692653 Do you have a link to order UberEATS Krispy Kreme because i cant find it..,uber_eats_order_delivery_issue,uber_eats_order_delivery_issue,FALSE,Looking for restaurant on Eats
+36702,@115877 Bring UberEATS to Lynden Washington. Please.,uber_eats_order_delivery_issue,other_out_of_scope,FALSE,Feature request to expand UberEats
+2759196,.@115877 Food emergency! Your restaurants keep cancelling my order after waiting a while. Hungry and frustrated ðŸ˜¤,uber_eats_order_delivery_issue,uber_eats_order_delivery_issue,FALSE,Restaurants cancelling orders
+673325,Never using @115877 again. My driver didnâ€™t speak English and my order was an hour late. Uber said itâ€™s not their fault.,uber_eats_order_delivery_issue,uber_eats_order_delivery_issue,FALSE,Late order + language; delivery issue primary
+2390628,@148768 @115877 How convenient that uber eats crashes at 2pm!!!!,uber_eats_order_delivery_issue,uber_eats_order_delivery_issue,FALSE,App crash during Eats
+2390667,"@148768 @115877 Tried 2 deliver 2 Royal Court of Justice office, showed up on Ubereats, entered card details then said too far.. How can this be??",uber_eats_order_delivery_issue,uber_eats_order_delivery_issue,FALSE,
+1853783,@115877 waited 1h40m for a delivery time of 20m then it was canceled bc u couldnâ€™t find a driver #thisisyourbusinesswasted food,uber_eats_order_delivery_issue,uber_eats_order_delivery_issue,FALSE,Long wait then cancelled no driver
+855038,"@Uber_Support Hey, Uber. I'm pretty sad that the handful of extra pass days you gave me made it impossible to renew my pass for November.",ride_pass_promotion_coupon,ride_pass_promotion_coupon,FALSE,Pass renewal issue caused by extra days
+813500,@115873 @Uber_Support the promo code you gave doesn't work at all. Please fix this :( https://t.co/QxBL962LUO,ride_pass_promotion_coupon,ride_pass_promotion_coupon,FALSE,Promo code not working
+2381950,@115873 Theres a typo tho ðŸ˜ give me some uber promo codes ðŸ˜œ,ride_pass_promotion_coupon,ride_pass_promotion_coupon,FALSE,Requesting promo codes
+2888870,@Uber_Support This is happening very frequent now every time I m shown something and deduct something whenever I apply promo,ride_pass_promotion_coupon,ride_pass_promotion_coupon,FALSE,Promo deduction issue
+397484,@Uber_Support I've only used eats once before I should still be able to use promo code,ride_pass_promotion_coupon,ride_pass_promotion_coupon,FALSE,
+444516,@Uber_Support someone took a closer look and even when i share the screenshots where it clearly shows that on Monday the trips were using my GIve_Get promotion that I had.. Still this person is claiming I didnt have that promo. How can you ignore the screenshot and from your own trip report?,ride_pass_promotion_coupon,ride_pass_promotion_coupon,TRUE,Promo not applied despite evidence
+38912,@Uber_Support how can I get an uber ride pass? I take about 2 rides a day!! Iâ€™ve DMd you.,ride_pass_promotion_coupon,ride_pass_promotion_coupon,TRUE,How to get ride pass
+1971792,@Uber_Support @115873 @116276 Where is the amount I could have saved by applying coupon code.. Which unfortunately did not work. Y d hell u send msgs of such Offers then,ride_pass_promotion_coupon,ride_pass_promotion_coupon,FALSE,Coupon not applied
+2409554,@Uber_Support Krispy Kreme doesnâ€™t even come up as an option to order from anymore which is ridiculous because it did last night and months prior for today. Suddenly thereâ€™s a promotion and you guys take it off. Absolute lies and rip off! So appalling,ride_pass_promotion_coupon,uber_eats_order_delivery_issue,FALSE,Promotion removed / restaurant unavailable
+1049209,@Uber_Support Hey! How come this 'FOODTOMYDOOR' promo code isn't working? The expiration date on the leaflet says valid until 31/12/2017 â˜¹ï¸,ride_pass_promotion_coupon,ride_pass_promotion_coupon,FALSE,Promo code not working
+2833739,@Uber_Support when can I but uber pass nyc again. It didnâ€™t renew this month ?,ride_pass_promotion_coupon,ride_pass_promotion_coupon,FALSE,Uber pass availability
+2724597,@Uber_Support that fine the promo code says 15$ off why its not converting in my countrys currency,ride_pass_promotion_coupon,ride_pass_promotion_coupon,FALSE,Promo currency conversion
+14351,@Uber_Support my joining discount was not applied to my first order. Also how do I find my personal code?,ride_pass_promotion_coupon,ride_pass_promotion_coupon,FALSE,Joining discount + personal code
+366201,"@Uber_Support Thr is no point in checking. Wat u hv replied is bullshit.
+U hv rplied that i applied an expird promo bt d thing is u sent me d same in sms",ride_pass_promotion_coupon,ride_pass_promotion_coupon,FALSE,Expired promo they themselves sent
+1380736,"My order from Leonidas was incomplete @115877 will you reimburse me for it? Offer a discount? Has not been 24hrs yet, but close. #Chicago",ride_pass_promotion_coupon,payment_refund_billing,FALSE,Explicit reimbursement request for incomplete order
+1683677,@Uber_Support I was wondering if yâ€™all were doing a discount like yâ€™all did last year or during the special election in GA,ride_pass_promotion_coupon,ride_pass_promotion_coupon,FALSE,Inquiring about discounts
+1338200,@115873 fed-up of you service .I m unable to use paytm as payment option also apply any coupon codes send by UBERINDIA #worstscoustomerservice,ride_pass_promotion_coupon,payment_refund_billing,FALSE,Coupon codes + payment option
+1498610,"@Uber_Support I have a promotion on my phone that I canâ€™t seem to use, how do I redeem it?",ride_pass_promotion_coupon,ride_pass_promotion_coupon,TRUE,How to redeem promotion
+2104688,@Uber_Support What response are you giving?? Are you fooling me??Why senior citizen discount is not enabled in my account??I did applied on time. Please check,ride_pass_promotion_coupon,ride_pass_promotion_coupon,FALSE,Senior citizen discount not enabled
+631913,@Uber_Support Without this promotion it is useless to work uber.,ride_pass_promotion_coupon,ride_pass_promotion_coupon,FALSE,Promotion needed to work
+683174,Dear @115873 @Uber_Support I m unable to regain access to my account. I forgot my password and your account retrieving steps is so pathetic that till today I m unable to revive my account. Pls help,account_login_app_access,account_login_app_access,FALSE,
+528347,@Uber_Support But that is for the customers who forget their password....but I remember my password very well,account_login_app_access,account_login_app_access,FALSE,
+407128,@Uber_Support Iâ€™m traveling abroad without access to my normal phone number. Why canâ€™t I sign in with my email/password? https://t.co/2TtUwQqfuQ,account_login_app_access,account_login_app_access,FALSE,Cannot sign in with email while traveling
+703116,@Uber_Support Iï¸ canâ€™t even login though cause Iï¸t sends me a 4 digit code to my phone which is off and itâ€™s a non iPhone message ðŸ˜©,account_login_app_access,account_login_app_access,FALSE,Login code to offline phone
+2760939,@Uber_Support  i m unable to log in inspite all the tries,account_login_app_access,account_login_app_access,FALSE,
+2229893,@Uber_Support i can't log in to my account for my restaurant... need to make updates and can't.,account_login_app_access,account_login_app_access,FALSE,Restaurant account login
+1485902,@Uber_Support Icant sign in,account_login_app_access,account_login_app_access,FALSE,
+1119040,@Uber_Support @384020 Uber  why is my account  blocked without any reason. I am unable  to book  uber. The cell no  is blocked. The account is deactivated by uber https://t.co/EhjEfeO8bR,account_login_app_access,account_login_app_access,FALSE,Account blocked/deactivated
+1186620,@Uber_Support nope this problem of a many many delivers not able to login you need to go public with this and now.,account_login_app_access,account_login_app_access,FALSE,Drivers unable to login
+1308084,@115873 please help phone lost in your cab 19:27 muhammed left in cab unable to reset password,account_login_app_access,other_out_of_scope,FALSE,Phone lost + unable reset password; access primary
+2241578,".@Uber_Support Yet I have received 3 or 4 email messages this week telling me my password had been tried to be reset. I'm asking, begging, pleading: SHUT DOWN MY ACCOUNT NOW!!! I've complained about my account being hacked a dozen times now and it continues to keep happening 2/3",account_login_app_access,account_login_app_access,FALSE,Hacked / repeated password reset attempts; request shut down
+608211,"@115873 I have booked a cab from Vivanta by Taj to Lulu mall kochi (login number- 8755178411)  I left  my phone in the cab by mistake. I am now unable to contact anyone. Please arrange a call back on +918826307202
+
+Please help me with this issue and help in getting back my phone",account_login_app_access,other_out_of_scope,FALSE,Left phone in cab; lost item recovery
+2586455,"@Uber_Support I mean your customer service email or phone # so that I can contact you, thank you",account_login_app_access,other_out_of_scope,FALSE,Requesting contact number/email
+2186104,@Uber_Support I have been unable to login to the link u provided. it was an issue reported by me,account_login_app_access,account_login_app_access,FALSE,
+1876680,"@115873 @Uber_Support
+
+Unable to login the uber app using my mobile number(+91 9642393924)... Can u pls look into it...!
+#uberindia",account_login_app_access,account_login_app_access,FALSE,
+317135,@Uber_Support I m doing that...please if u can help me there..this problem persists since last 6onths..unnecessarily blocked my account.,account_login_app_access,account_login_app_access,FALSE,Account blocked
+1527784,@Uber_Support Wonâ€™t let me log in. Changed the password and it still doesnâ€™t work. Driver finally showed up 20 minutes later.,account_login_app_access,account_login_app_access,FALSE,Login failure (driver delay secondary)
+1485912,"@115873 cant get into my account, cant reset password, getting notifications in Chinese. Canâ€™t get a hold of Uber in any way. Hate Uber now",account_login_app_access,account_login_app_access,FALSE,Cannot access + Chinese notifications
+761377,"@Uber_Support I changed my phone number and unable to sign in as driver because of your 2 way verification, you do not answer any help msgs",account_login_app_access,account_login_app_access,FALSE,Driver 2FA after phone change
+136577,"@119983  @Uber_Support  can't seem to log into my account from the mobile app, I re-downloaded the app and now the app does not accept my phone no or email. How do i log in instead of signup?",account_login_app_access,account_login_app_access,FALSE,
+429194,@Uber_Support No. I asked it to be refunded on my bank account since my company is paying for journeys but not for cancellation fees,payment_refund_billing,payment_refund_billing,FALSE,Wants refund to bank not cancellation fee
+520848,@128445 @Uber_Support @116276 @196983 My case difference but still they shouldnâ€™t have charged twice for one trip....,payment_refund_billing,payment_refund_billing,FALSE,Charged twice
+1038966,@Uber_Support I got this after multiple follow up. But I didn't get refund. Should I expect better service from #Uber https://t.co/8NR6QInacV,payment_refund_billing,payment_refund_billing,FALSE,No refund after follow up
+2431642,@115873 Longtime NYC customer with first problem ever. Was charged double for a ride using the split fare feature with a friend. Customer service is saying the pick up location was different - not true! Can you help? Very disappointed.,payment_refund_billing,payment_refund_billing,FALSE,Double charged on split fare
+1166949,@115873 I've just complained on the app about a fee I was charged at 3 times the suggested rate. I'm appalled by this &amp; would like a refund,payment_refund_billing,payment_refund_billing,FALSE,Charged 3x suggested rate; wants refund
+1249760,@319245 @Uber_Support @413225 Same here and still suffering... Have never suffered with anyone ever to get my refund back,payment_refund_billing,payment_refund_billing,FALSE,
+19745,@Uber_Support I was unjustly charged $5.00 USD. Please refund my account or I will boycott UBER!!,payment_refund_billing,payment_refund_billing,FALSE,Unjust $5 charge; wants refund
+2217524,@Uber_Support &amp; each time u guys reply sayng dat dis ws a cash trip!! It wsnt!! do i hav 2 b as influential as @647866 to get a refund,payment_refund_billing,payment_refund_billing,FALSE,Cash trip dispute; wants refund
+2614393,Yo @Uber_Support. You charged me twice for a trip I never took,payment_refund_billing,payment_refund_billing,FALSE,Charged twice for trip never took
+2441966,"@Uber_Support / @115873 fucking sucks. I was wrongly charged $150 and they won't give me a refund.
+
+Everyone reading this stop using them and use @115879",payment_refund_billing,payment_refund_billing,FALSE,Wrongly charged $150; no refund
+1864990,@Uber_Support Why do u keep sending me this link? Just refund the money,payment_refund_billing,payment_refund_billing,FALSE,Just wants refund
+282302,Why is my @115873 driver texting whilst on a dual carriage way..: can I be refunded for this or nah ??,payment_refund_billing,driver_partner_safety_issue,FALSE,Driver texting; asks refund
+492323,@Uber_Support I have tried submitting my request several times. But no refund yet. The driver didn't show up for the trip last minute on 27th Nov and yet you charged me,payment_refund_billing,payment_refund_billing,FALSE,Driver no-show but charged; wants refund
+1162942,"@Uber_Support @115873 @116288, why is there no response!! Stop the wrong doing and refund the in-correct charge of Rs. 105",payment_refund_billing,payment_refund_billing,FALSE,Incorrect charge Rs105; refund
+157856,"@Uber_Support Guyz, Please just refund money so that I can again do payment or reflect it in your system so i can book another ride.(1/2)",payment_refund_billing,payment_refund_billing,FALSE,Just refund so can book again
+2530504,@115873 @Uber_Support  do refund this pool trip as the route followed took me away from my drop and i had to cancel midway and take a rickshaw https://t.co/32hhnhoWNF,payment_refund_billing,payment_refund_billing,FALSE,Refund pool trip; route issue + cancel
+1391636,"@116276 Legally I should get the refund, but @Uber_Support not agree... Pl. Help...",payment_refund_billing,payment_refund_billing,FALSE,Legal claim for refund
+1451658,"@Uber_Support sent you a dm, app is telling me I have a payment issue.",payment_refund_billing,payment_refund_billing,FALSE,Payment issue flagged in app
+845977,"@Uber_Support I've been charged twice, by cabs and by card for my trip !",payment_refund_billing,payment_refund_billing,FALSE,Charged twice cash + card
+2457243,"@Uber_Support If the driver takes a different route as per his choice, why does the Ride pass not apply and why to I have to pay more than double of what I hoops be paying. Hold the driver / gps responsible not me. Give me refund of 150 for my previous ride.",payment_refund_billing,payment_refund_billing,FALSE,Ride pass not applied + overpay; explicit refund request
+95710,If your @115873 driver gets arrested during your trip do you still have to pay? Technically the police drove me to my destination. Still have him 5 stars.,driver_partner_safety_issue,payment_refund_billing,FALSE,Driver arrested mid-trip; payment question secondary
+1458149,"@Uber_Support @295171 A uber driver using jammer .. What should I do, call police ?",driver_partner_safety_issue,driver_partner_safety_issue,FALSE,Driver using jammer; asks if call police
+2258563,@Uber_Support I will file police complaint against this driver. This is really pathetic . Why I was charged 42 rs ?,driver_partner_safety_issue,payment_refund_billing,FALSE,Will file police complaint + cancellation charge
+2162745,Have Ola or Uber issued any guidelines to their drivers not to or atleast use headsets while driving in India? See many talk holding their phones for long. Unsafe behavior. @1143 @Uber_Support @115873,driver_partner_safety_issue,driver_partner_safety_issue,FALSE,Unsafe phone use while driving
+1111449,@115873 We did a police report but driver suspended the account Police said to take picture of license plate before getting in. We only hav 1st name,driver_partner_safety_issue,driver_partner_safety_issue,FALSE,Police report already; account suspended
+997282,"@Uber_Support Quadruple charged, unsafe driver, took me three times as long to get home.
+â€œThanks- this matches what we quoted you. We will look into itâ€",driver_partner_safety_issue,driver_partner_safety_issue,FALSE,Unsafe driver + quadruple charged
+2363439,"@Uber_Support my mom was hit by an uber driver. she was told to contact the area rep. well, its been a few weeks and he has not reached out. Whats the deal?",driver_partner_safety_issue,driver_partner_safety_issue,FALSE,Mom hit by Uber driver; no follow up
+2381495,@Uber_Support This is just Standing Operating Procedures. I had informed and spoke to the driver on Sunday night being the 1st step; Cab aggregator being the 2nd step; and the police being the 3rd step which I hope would not be necessary. My alt no. 9643736103 or 9999365408.,driver_partner_safety_issue,driver_partner_safety_issue,FALSE,Escalating to police; SOP steps
+1384378,"@Uber_Support @115873 Route suggested by @115873 was trash. It was full of bumpy, narrow, filthy roads passing through unsafe neighbourhood which I NEVER take",driver_partner_safety_issue,driver_partner_safety_issue,FALSE,Unsafe route through bad neighbourhood
+242538,@Uber_Support @115873 Also no concern on safety and driver talking on phone while driving?,driver_partner_safety_issue,driver_partner_safety_issue,FALSE,Driver talking on phone; safety concern
+8621,"@115873 Get lost, you are an unlicensed, unsafe scummy cab firm take your business elsewhere.",driver_partner_safety_issue,driver_partner_safety_issue,FALSE,Unsafe / unlicensed claim
+1620834,Am never getting an @Uber_Support @115873  again. Incredibly verbally aggressive driver. Felt incredibly unsafe.,driver_partner_safety_issue,driver_partner_safety_issue,FALSE,Verbally aggressive; felt unsafe
+1906129,@Uber_Support Now your Uber driver is lieing about me spilling water in her car we will see what the police have to say which she is being reported,driver_partner_safety_issue,other_out_of_scope,FALSE,Driver lying; reporting to police
+1240205,@Uber_Support Should i lodge police complaint for this cheating . As per record driver name is Govardhan Reddy .,driver_partner_safety_issue,driver_partner_safety_issue,FALSE,Considering police for cheating
+1387797,@Uber_Support He forced us to give him $75 worth of cash and made us feel unsafe.,driver_partner_safety_issue,driver_partner_safety_issue,FALSE,Forced cash + felt unsafe
+672118,"@Uber_Support An Uber driver asked me to get down from the car to get the luggage. As soon as I got down, he went/ran away without stopping. The name of Driver is Fahad / Dubai. He dropped me at T3. Can I have his license plate number or his contact number? I will report 2 police",driver_partner_safety_issue,driver_partner_safety_issue,FALSE,Driver fled with luggage; will report police
+245822,@Uber_Support This is not the first time youve neglected to respond to my reports of a dangerous driver. I shouldnt have to get your attention on twitter.,driver_partner_safety_issue,driver_partner_safety_issue,FALSE,Repeated reports of dangerous driver
+282297,"@Uber_Support This is the second time in a week, Iâ€™ve had a dangerous driver. I hope @131434 will@be refunding me",driver_partner_safety_issue,driver_partner_safety_issue,FALSE,Dangerous driver; hopes refund
+2957799,so i fall asleep in the uber and wake up to my driver touching me i hit him repeatedly but he wouldnâ€™t let me out or stop touching me https://t.co/nP4cFtFEEg,driver_partner_safety_issue,driver_partner_safety_issue,FALSE,Sexual assault / unwanted touching; severe safety
+282301,"@183249 @Uber_Support @131434 Not only do you want cheap you want free,Next time stop the car get out if you feel unsafe.",driver_partner_safety_issue,driver_partner_safety_issue,FALSE,Reply about feeling unsafe
+443058,@Uber_Support See people there staff don't have damn abt caring for people https://t.co/nvqW9KIuKL,other_out_of_scope,other_out_of_scope,FALSE,Vague staff care complaint
+545883,@Uber_Support hey i sent the DM but no email,other_out_of_scope,other_out_of_scope,FALSE,Sent DM no email
+1269084,@Uber_Support Or Iâ€™m moving to court.,other_out_of_scope,other_out_of_scope,FALSE,Threat of court
+31999,@Uber_Support Where is process stuck? You have my card details. Uber account details. Just issue the reversals. Finish. How many times say the same thing?,other_out_of_scope,other_out_of_scope,FALSE,Stuck process; wants reversals
+177081,@Uber_Support i just can't get the app to accept my new credit card. Can I change my account name to Stephen (Richards) from Steve? Maybe the bank won't accept a different name when it checks the credit card payment?,other_out_of_scope,account_login_app_access,FALSE,Credit card acceptance + name change
+2907311,@163067 @135855 also tag @uber_support when trying to rectify. the SD thing wont help much if at all.,other_out_of_scope,other_out_of_scope,FALSE,Tagging support advice
+1111445,@Uber_Support __email__ I donâ€™t know what a DM is,other_out_of_scope,other_out_of_scope,FALSE,Doesn't know what DM is
+1005276,"@Uber_Support Oh no. It hasn't been hacked. The way google works, email address + text all goes to me, so somebody signed up. They can't access my profile or email or anything. Their emails are just going to me and not them.",other_out_of_scope,other_out_of_scope,FALSE,Email signup confusion; not really hacked
+1979800,"@Uber_Support @586091 Your rules to disown responsibility for left out luggage is unethical, unfair, unjust, inhuman and a step towards encouraging misconduct",other_out_of_scope,other_out_of_scope,FALSE,Left luggage policy complaint
+2954596,"@115873 @Uber_Support This is absolute loot. Delhi Airport to Gurugram, for 35 Km distance, Uber charging more than 1000 rupees. @494364 Nobody cares. Pathetic. @123289",other_out_of_scope,fare_price_dispute,FALSE,High fare complaint (airport); override from other
+281762,@Uber_Support I have tried after submission no response or reply but still the registration page still reopening. Am using blackberry Z10,other_out_of_scope,other_out_of_scope,FALSE,Registration page issue Blackberry
+1185198,@Uber_Support @144886 Did NOTHING last night while a driver never picked me up but â€œstarted the rideâ€ circled my home repeatedly &amp; drove ALL night!,other_out_of_scope,missing_incomplete_ride,FALSE,Driver never picked up but started ride; circled home
+122405,@Uber_Support Yeah the page won't load anymore so is not very helpful,other_out_of_scope,other_out_of_scope,FALSE,Page won't load
+308977,@Uber_Support Uber and lyft are very active in this area and I've only had this problem multiple times with uber,other_out_of_scope,other_out_of_scope,FALSE,General comparison complaint
+1800845,@Uber_Support @115873 @116276 @5034 @133052 When will Uber provide phonesupport to resolve issues in realtime?Can taxi deny trips?,other_out_of_scope,other_out_of_scope,FALSE,Request for phone support
+2707717,@760402 @351970 @Uber_Support @180336 Good! Me either!!!,other_out_of_scope,other_out_of_scope,FALSE,Agreement reply; no content
+2517180,@Uber_Support Logging in under that link takes me to a dead end with nowhere to enter any text,other_out_of_scope,account_login_app_access,FALSE,Link leads to dead end
+346782,"@116288 @115873 @15316 Multiple followups, no correct response or proper investigation, computerised responses, #pathetic @119983",other_out_of_scope,other_out_of_scope,FALSE,Multiple followups no investigation
+2171771,@Uber_Support Your twitter automation is terrible. Idk why I even bothered - knew Iâ€™d get a response like that. Use human beings who can read and think.,other_out_of_scope,other_out_of_scope,FALSE,Complaint about automated responses
+718565,@Uber_Support very bed experience with uber your driver fruod,other_out_of_scope,other_out_of_scope,FALSE,Bad experience + driver fraud (vague)

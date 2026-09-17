@@ -1,0 +1,16 @@
+﻿{
+  "n": 10,
+  "groundedness": {
+    "exact_agreement": 0.80,
+    "cohen_kappa": 0.0,
+    "human_mean": 4.8,
+    "llm_mean": 5.0
+  },
+  "policy_adherence": {
+    "exact_agreement": 0.80,
+    "cohen_kappa": 0.0,
+    "human_mean": 4.8,
+    "llm_mean": 5.0
+  },
+  "limitation": "The LLM judge assigned 5/5 to all sampled cases for both dimensions, producing no rating variance. Cohen's kappa is therefore not informative on this sample; exact agreement is reported as the primary agreement measure."
+}
