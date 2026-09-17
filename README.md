@@ -20,7 +20,32 @@ The system:
 
 ---
 
-## 2. Dataset and EDA
+## 2. Problem Framing: What “Good” Means for Uber Support
+
+For this assignment, a good support agent should do four things reliably:
+
+- **Identify the customer's primary issue correctly**, using the 10-intent taxonomy derived from Uber Support data.
+- **Retrieve relevant historical support evidence** rather than inventing an answer.
+- **Draft a concise, useful response grounded in that evidence.**
+- **Escalate cases that should not be confidently auto-handled**, while avoiding unnecessary escalation of routine support requests.
+
+The evaluation therefore measures classification quality, escalation behaviour, evidence/retrieval signals, and reply quality rather than treating response fluency alone as success.
+
+### What We Chose Not to Build
+
+The project deliberately does **not** attempt to:
+
+- connect to Uber's live customer/account systems;
+- look up a customer's real-time transaction, trip, refund, or account state;
+- execute refunds, cancellations, account changes, or other support actions;
+- claim that a historical customer issue was genuinely resolved when the dataset only provides structural conversation evidence;
+- build a production deployment or customer-facing support interface.
+
+The scope is the evaluation of classification, historical evidence retrieval, response drafting, and escalation decisions.
+
+---
+
+## 3. Dataset and EDA
 
 **Source:** Kaggle Customer Support on Twitter (`thoughtvector/customer-support-on-twitter`)
 **Selected brand:** `Uber_Support`
@@ -61,7 +86,7 @@ The retrieval corpus uses a documented structural eligibility heuristic for raw 
 
 ---
 
-## 3. Intent Taxonomy
+## 4. Intent Taxonomy
 
 The final taxonomy contains 10 single-label intents derived from the observed Uber Support data:
 
@@ -91,7 +116,7 @@ This makes the human labelling rule deterministic and reproducible.
 
 ---
 
-## 4. Agent Architecture
+## 5. Agent Architecture
 
 The implementation is split into independently testable components:
 
@@ -133,7 +158,7 @@ LLM calls can be mocked in tests and are bounded by explicit call and output-tok
 
 ---
 
-## 5. Golden Evaluation Set
+## 6. Golden Evaluation Set
 
 The final evaluation uses **200 human-labelled examples** from the selected Uber Support population.
 
@@ -149,7 +174,7 @@ The set is intentionally not forced to have exactly equal representation across 
 
 ---
 
-## 6. Automated Evaluation Results
+## 7. Automated Evaluation Results
 
 The final agent evaluation processed all **200/200** golden-set rows successfully with **0 failed agent rows**.
 
@@ -183,7 +208,9 @@ Per-intent precision and recall:
 | Recall | **34.52%** |
 | False auto-handle rate | **64.50%** |
 
-The headline 100% escalation precision is intentionally not presented as a standalone quality claim. It occurs alongside low recall and a 64.5% false auto-handle rate, so the complete metric set is necessary to interpret the behaviour.
+## What Is Misleading About My Headline Number?
+
+The most eye-catching number is **100% escalation precision**, but it is misleading if reported by itself. The same evaluation shows only **34.52% escalation recall** and a **64.5% false auto-handle rate**. In other words, the agent avoided false escalations in the evaluated sample but still auto-handled many cases that the human labels marked for escalation. The complete precision/recall/error-rate picture is therefore more informative than the 100% precision headline alone.
 
 ### Retrieval
 
@@ -202,7 +229,7 @@ These similarity statistics are descriptive and are not retrieval-recall measure
 
 ---
 
-## 7. Baselines
+## 8. Results vs. Baselines
 
 Two non-LLM classification baselines were evaluated on the same 200-example population using an 80/20 stratified split with `random_state=42` where training was required:
 
@@ -216,7 +243,7 @@ The baselines provide reference points rather than proving causality for the age
 
 ---
 
-## 8. Failure Analysis
+## 9. Failure Analysis
 
 There were **42 classification errors** in the 200-example evaluation.
 
@@ -230,6 +257,14 @@ The most frequent mismatch pairs were:
 | `missing_incomplete_ride` → `driver_partner_safety_issue` | 3 |
 | `missing_incomplete_ride` → `cancellation_no_show_charge` | 2 |
 
+### Real examples
+
+- `payment_refund_billing` → `fare_price_dispute`: tweets about duplicate charges, unexpected fees, or refund requests can share strong price/fare vocabulary.
+- `other_out_of_scope` → `unauthorized_transaction`: vague fraud language can resemble a specific unauthorized-transaction report.
+- `other_out_of_scope` → `account_login_app_access`: lost-phone, reset, or page-access complaints can be difficult to separate from broader out-of-scope requests.
+- `missing_incomplete_ride` → `driver_partner_safety_issue`: a driver not answering, falling asleep, or starting a ride unexpectedly can contain both ride-completion and safety signals.
+- `missing_incomplete_ride` → `cancellation_no_show_charge`: a ride that never happened can also mention a cancellation or charge, creating a boundary case.
+
 ### Failure hypotheses
 
 1. **Billing vs fare overlap:** duplicate charges, fees, refunds, and route-based price disputes often share the same monetary vocabulary. The classifier can select `fare_price_dispute` when the requested resolution is actually billing/refund-related.
@@ -240,7 +275,7 @@ These hypotheses motivate clearer boundary examples and explicit requested-resol
 
 ---
 
-## 9. LLM Judge and Human Agreement
+## 10. LLM Judge and Human Agreement
 
 A separate LLM judge evaluated successfully generated draft/evidence cases for:
 
@@ -268,7 +303,7 @@ The LLM judge is treated as secondary evidence, not as a replacement for the 200
 
 ---
 
-## 10. Retrieval Provenance Limitation
+## 11. Retrieval Provenance Limitation
 
 The historical reply corpus is derived from raw TWCS structure using a documented heuristic. The heuristic uses conversation graph structure, inbound/outbound authorship, and terminal-message relationships to identify eligible support replies.
 
@@ -278,7 +313,7 @@ The repository deliberately keeps the provenance boundary explicit rather than s
 
 ---
 
-## 11. One-Week Next Steps
+## 12. One-Week Next Steps
 
 1. Add a small human-reviewed retrieval benchmark with explicit gold replies or acceptable evidence sets.
 2. Review the highest-frequency classification boundary errors and add targeted contrastive examples.
@@ -289,7 +324,7 @@ The repository deliberately keeps the provenance boundary explicit rather than s
 
 ---
 
-## 12. Decision Log
+## 13. Decision Log
 
 The repository keeps a decision log at `report/decision_log.md` covering the major design choices across intent discovery, conversation reconstruction, retrieval provenance, evaluation, baselines, LLM budgeting, checkpointing, and judge usage.
 
@@ -306,7 +341,7 @@ There are 12 documented decision entries. Important decisions include:
 
 ---
 
-## 13. Testing and Reproduction
+## 14. Testing and Reproduction
 
 The project includes unit tests covering classification, retrieval, drafting, escalation, pipeline orchestration, conversation reconstruction, metrics, LLM client behaviour, evaluation harnesses, baselines, and judge parsing.
 
@@ -326,7 +361,7 @@ The real LLM evaluation requires a locally supplied Groq-compatible API key. Eva
 
 ---
 
-## 14. Security and Data Handling
+## 15. Security and Data Handling
 
 - The raw TWCS dataset is excluded from Git.
 - API credentials are supplied through environment variables and are not committed.
@@ -336,7 +371,7 @@ The real LLM evaluation requires a locally supplied Groq-compatible API key. Eva
 
 ---
 
-## 15. Credits
+## 16. Credits
 
 Dataset, library, model-provider, and attribution information is documented in [`CREDITS.md`](CREDITS.md).
 
