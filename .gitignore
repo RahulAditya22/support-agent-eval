@@ -70,3 +70,8 @@ artifacts/
 *.ckpt
 *.onnx
 *.safetensors
+
+# Keep the human-reviewed evaluation artifacts trackable
+!/data/eval/golden_set_candidates.csv
+!/data/eval/judge_human_agreement.csv
+!/data/eval/phase6_human_agreement.json
