@@ -33,3 +33,53 @@
 - **This explicitly reverses D-Phase3-01's no-heuristic stance.** D-Phase3-01 remains the validation boundary for explicitly annotated records; D-Phase3-02 adds the raw-data derivation layer that produces those annotations.
 - **Headline-number caveat:** retrieval/evaluation metrics using this corpus must state that the corpus is heuristically resolved, not human-verified. Metrics therefore should not be presented as performance against a human-labeled resolution corpus.
 - Threads that do not satisfy the heuristic are excluded rather than forced into `resolved`.
+
+## Phase 2 — Taxonomy Design
+
+### D-Phase2-11 — Derive intents from Uber Support data rather than importing a benchmark taxonomy
+- The final taxonomy was constructed from the observed Uber Support conversation themes and cluster inspection.
+- Ten single-label intents were selected: cancellation/no-show charges, unauthorized transactions, fare/price disputes, missing/incomplete rides, Uber Eats order/delivery issues, ride pass/promotion/coupon issues, account/login/app access, payment/refund/billing, driver/partner safety issues, and other/out-of-scope.
+- This keeps the evaluation aligned with the actual support domain represented by the dataset.
+
+### D-Phase2-12 — Use a deterministic hierarchy for single-label assignment
+- Each initiating customer tweet receives one primary intent.
+- The assignment hierarchy is: explicit requested resolution > blocking issue > greatest emphasis/detail > `other_out_of_scope`.
+- This prevents multi-intent examples from being labelled inconsistently across the golden set and evaluation runs.
+
+## Phase 3 — Conversation Reconstruction
+
+### D-Phase3-03 — Use recursive conversation-graph closure
+- Initial seed conversations were expanded recursively through both parent and child tweet references.
+- This was required because a one-hop sample left substantial missing child references.
+- The resulting processed Uber sample contains 20,520 reconstructed rows and the historical reply corpus contains 18,673 validated replies.
+- The approach prioritizes complete local conversation structure before retrieval over a larger but incomplete sample.
+
+## Phase 4 — Evaluation Harness
+
+### D-Phase4-01 — Keep human labels separate from model predictions
+- The golden set contains explicit `human_intent_label` and `human_auto_handle_label` fields.
+- Model predictions are stored separately and evaluation functions require human labels rather than treating model output as ground truth.
+- This preserves the distinction between system output and the human-owned evaluation reference.
+
+### D-Phase4-02 — Use deterministic, same-population baselines
+- Majority and TF-IDF + Logistic Regression baselines were evaluated using the same 200-row golden population.
+- The TF-IDF baseline uses an 80/20 stratified split with `random_state=42`.
+- This provides a reproducible reference point for interpreting the agent's 79% classification accuracy.
+
+### D-Phase4-03 — Make LLM calls bounded and retry-aware
+- The shared Groq client enforces a maximum call budget and output-token budget.
+- Retry handling covers retryable failures and rate-limit responses while avoiding retries for non-retryable errors.
+- This prevents an evaluation run from continuing indefinitely or consuming unbounded API usage.
+
+## Phase 6 — Evaluation Operations
+
+### D-Phase6-01 — Use checkpointing and resume for long evaluation runs
+- The 200-row agent evaluation was run with checkpoint/resume support.
+- This allows interrupted or quota-limited runs to continue without rerunning successfully completed cases.
+- The final agent evaluation completed all 200 rows successfully with zero failed agent rows.
+
+### D-Phase6-02 — Treat LLM judge results as sampled secondary evidence
+- The LLM judge was applied only to successfully generated draft/evidence cases and produced 46 valid judgments.
+- Invalid, empty, runtime-failed, and budget-exhausted calls were not converted into scores.
+- The judge sample is therefore reported as a secondary qualitative signal rather than as a substitute for the 200-row human-labelled evaluation.
+- The final valid sample averaged 4.91/5 for groundedness and 4.91/5 for policy adherence.

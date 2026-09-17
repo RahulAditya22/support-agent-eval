@@ -1,8 +1,10 @@
+
 """Budget-bounded LLM judge for draft support replies."""
 
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass
 from typing import Any, Sequence
 
@@ -25,6 +27,7 @@ def build_judge_prompt(
         raise ValueError("customer_text must be non-empty")
     if not isinstance(draft_reply, str) or not draft_reply.strip():
         raise ValueError("draft_reply must be non-empty")
+
     evidence_text = "\n".join(
         f"{index + 1}. {text}"
         for index, text in enumerate(evidence)
@@ -50,17 +53,84 @@ Customer tweet:
 Draft reply:
 {draft_reply.strip()}
 
-Return ONLY a JSON object with exactly these keys:
-{{"groundedness": 1, "policy_adherence": 1, "rationale": "brief explanation"}}
+Return ONLY one JSON object.
+Do not use Markdown fences.
+Do not add commentary before or after the JSON.
+Use exactly these fields:
+- groundedness: integer 1-5
+- policy_adherence: integer 1-5
+- rationale: brief string
+
+Example:
+{{"groundedness": 3, "policy_adherence": 4, "rationale": "Brief explanation."}}
 """
 
 
-def parse_judge_response(raw: str) -> JudgeResult:
-    """Strictly parse the judge JSON and validate its schema/ranges."""
+def _extract_json_object(raw: str) -> Any:
+    """Extract a JSON object without interpreting arbitrary prose as JSON."""
+    if not isinstance(raw, str) or not raw.strip():
+        raise ValueError("judge response was empty")
+
+    text = raw.strip()
+
+    # First try the complete response.
     try:
-        payload: Any = json.loads(raw)
-    except json.JSONDecodeError as exc:
-        raise ValueError("judge response was not valid JSON") from exc
+        return json.loads(text)
+    except json.JSONDecodeError:
+        pass
+
+    # Accept a single JSON object wrapped in Markdown fences or surrounded
+    # by harmless whitespace/commentary, but still require valid JSON.
+    fenced = re.search(
+        r"```(?:json)?\s*(\{.*\})\s*```",
+        text,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    if fenced:
+        try:
+            return json.loads(fenced.group(1))
+        except json.JSONDecodeError:
+            pass
+
+    # Find the first balanced JSON object. This avoids blindly slicing text
+    # between the first and last braces when the rationale contains braces.
+    start = text.find("{")
+    if start >= 0:
+        depth = 0
+        in_string = False
+        escaped = False
+
+        for index in range(start, len(text)):
+            char = text[index]
+
+            if in_string:
+                if escaped:
+                    escaped = False
+                elif char == "\\":
+                    escaped = True
+                elif char == '"':
+                    in_string = False
+                continue
+
+            if char == '"':
+                in_string = True
+            elif char == "{":
+                depth += 1
+            elif char == "}":
+                depth -= 1
+                if depth == 0:
+                    candidate = text[start : index + 1]
+                    try:
+                        return json.loads(candidate)
+                    except json.JSONDecodeError:
+                        break
+
+    raise ValueError("judge response was not valid JSON")
+
+
+def parse_judge_response(raw: str) -> JudgeResult:
+    """Parse judge JSON and validate its schema/ranges."""
+    payload = _extract_json_object(raw)
 
     if not isinstance(payload, dict):
         raise ValueError("judge response must be a JSON object")
@@ -107,6 +177,8 @@ def judge_reply(
 
     prompt = build_judge_prompt(customer_text, draft_reply, evidence)
     raw = llm_client.complete(prompt, max_output_tokens=250)
+
     if not isinstance(raw, str):
         raise TypeError("llm_client.complete must return a string")
+
     return parse_judge_response(raw)

@@ -10,7 +10,7 @@ The implementation uses open-source Python libraries listed in `requirements.txt
 
 ## LLM Provider
 
-The real LLM integration is designed for Groq's OpenAI-compatible API, using `gpt-oss-120b`. API credentials are supplied locally through environment variables and are never committed.
+The real LLM integration is designed for Groq's OpenAI-compatible API, using `openai/gpt-oss-120b`. API credentials are supplied locally through environment variables and are never committed.
 
 ## Prompts and Borrowed Work
 
